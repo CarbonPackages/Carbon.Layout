@@ -1,0 +1,3 @@
+prototype(Carbon.Layout:Header) < prototype(Neos.Fusion:Component) {
+    renderer = '<!-- Header -->'
+}

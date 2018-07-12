@@ -1,0 +1,9 @@
+prototype(Carbon.Layout:Default) < prototype(Neos.Fusion:Component) {
+    content = ${value}
+
+    renderer = Neos.Fusion:Array {
+        header = Carbon.Layout:Header
+        content = ${props.content}
+        footer = Carbon.Layout:Footer
+    }
+}
