@@ -5,13 +5,12 @@ prototype(Neos.Neos:Page) {
             condition = true
             renderer = 'Default'
         }
-        @process.addPrefix = ${value ? Configuration.setting('Carbon.Layout.Prefix') + value  : false}
     }
     @context.layout = ${this.layout}
     @ignoreProperties = ${['layout']}
 
     body.@process.layout = Neos.Fusion:Renderer {
         @if.hasLayout = ${layout ? true : false}
-        type = ${layout}
+        type = ${Configuration.setting('Carbon.Layout.Prefix') + layout}
     }
 }
