@@ -9,6 +9,27 @@ prototype(Neos.Neos:Page) {
     @context.layout = ${this.layout}
     @ignoreProperties = ${['layout']}
 
+    htmlTag.attributes.class.@process.addLayoutClass = Neos.Fusion:Component {
+        @if.hasLayout = ${layout}
+        class = ${'-layout-' + String.toLowerCase(layout)}
+        value = ${value}
+        renderer = Neos.Fusion:Case {
+            isEmpty {
+                condition = ${!props.value}
+                renderer = ${props.class}
+            }
+            isString {
+                condition = ${Type.isString(props.value)}
+                renderer = ${String.trim(props.value) + ' ' + props.class}
+            }
+            isArray {
+                condition = ${Type.isArray(props.value)}
+                renderer = ${Array.push(props.value, props.class)}
+            }
+        }
+    }
+
+
     body.@process.layout = Neos.Fusion:Renderer {
         @if.hasLayout = ${layout ? true : false}
         type = ${Configuration.setting('Carbon.Layout.Prefix') + layout}
