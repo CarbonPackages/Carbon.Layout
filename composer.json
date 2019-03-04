@@ -3,9 +3,17 @@
     "type": "neos-carbon",
     "description": "Fast and easy layout handler for Neos.io",
     "license": "MIT",
-    "keywords": ["flow", "neos", "fusion", "helper", "layout", "carbon"],
+    "keywords": [
+        "flow",
+        "neos",
+        "fusion",
+        "helper",
+        "layout",
+        "carbon"
+    ],
     "require": {
-        "neos/neos": "~3.3 || ~4.0"
+        "neos/neos": "~3.3 || ~4.0",
+        "carbon/eel": "^1.2"
     },
     "authors": [
         {

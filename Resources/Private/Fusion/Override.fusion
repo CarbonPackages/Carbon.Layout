@@ -11,7 +11,7 @@ prototype(Neos.Neos:Page) {
 
     htmlTag.attributes.class.@process.addLayoutClass = Neos.Fusion:Component {
         @if.hasLayout = ${layout}
-        class = ${'-layout-' + String.toLowerCase(layout)}
+        class = ${'-layout-' + Carbon.String.urlize(layout)}
         value = ${value}
         renderer = Neos.Fusion:Case {
             isEmpty {
