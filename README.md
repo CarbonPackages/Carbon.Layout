@@ -9,5 +9,5 @@
 
 ## Installation
 
-`Carbon.Layout` is available via packagist. Add `"carbon/layout" : "^1.0"`
+`Carbon.Layout` is available via packagist. Add `"carbon/layout" : "^2.0"`
 to the require section of your composer.json or run `composer require carbon/layout`.
